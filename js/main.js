@@ -183,9 +183,13 @@ function initAccordion() {
     const trigger = item.querySelector('.faq-question');
     trigger?.addEventListener('click', () => {
       const isOpen = item.classList.contains('active');
-      items.forEach(i => i.classList.remove('active'));
+      items.forEach(i => {
+        i.classList.remove('active');
+        i.querySelector('.faq-question')?.setAttribute('aria-expanded', 'false');
+      });
       if (!isOpen) {
         item.classList.add('active');
+        trigger.setAttribute('aria-expanded', 'true');
       }
     });
   });
