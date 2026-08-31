@@ -49,7 +49,7 @@ const quizState = {
   answers: {
     age: '',
     challenge: '',
-    format: ''
+    location: ''
   }
 };
 
@@ -101,7 +101,7 @@ function initQuiz() {
   // Restart quiz
   document.getElementById('btn-restart-quiz')?.addEventListener('click', () => {
     quizState.step = 1;
-    quizState.answers = { age: '', challenge: '', format: '' };
+    quizState.answers = { age: '', challenge: '', location: '' };
     quizContainer.querySelectorAll('.quiz-option-btn').forEach(btn => btn.classList.remove('selected'));
     showStep(1);
   });
@@ -113,39 +113,54 @@ function generateRecommendation() {
   const resultTag = document.getElementById('quiz-result-tag');
   const resultWaBtn = document.getElementById('quiz-whatsapp-btn');
 
-  const challenge = quizState.answers.challenge;
-  const age = quizState.answers.age;
-  const format = quizState.answers.format;
+  const age = quizState.answers.age || 'cão';
+  const challenge = quizState.answers.challenge || 'comportamento';
+  const location = quizState.answers.location || 'cuiaba';
+
+  const ageLabels = {
+    puppy: 'filhote',
+    young: 'jovem',
+    adult: 'adulto',
+    senior: 'idoso'
+  };
+
+  const challengeLabels = {
+    xixi: 'xixi e cocô fora do lugar',
+    mordidas: 'mordidas em mãos ou objetos',
+    passeio: 'puxões ou agitação no passeio',
+    latidos: 'latidos em determinadas situações',
+    destruicao: 'destruição de objetos quando sozinho',
+    ansiedade: 'ansiedade ou dificuldade em ficar sozinho',
+    obediencia: 'orientação e obediência básica',
+    medo: 'medos e inseguranças',
+    outro: 'comportamento geral'
+  };
+
+  const locationLabels = {
+    cuiaba: 'Cuiabá',
+    varzeagrande: 'Várzea Grande',
+    outra: 'outra cidade'
+  };
+
+  const ageText = ageLabels[age] || 'cão';
+  const challengeText = challengeLabels[challenge] || 'comportamento';
+  const locationText = locationLabels[location] || 'Cuiabá';
 
   let recommendation;
 
-  if (format === 'presencial') {
+  if (location === 'cuiaba' || location === 'varzeagrande') {
     recommendation = {
       title: "Atendimento Presencial com o Adestrador João Eduardo",
-      tag: "Treino Domiciliar em Cuiabá, MT",
-      desc: "O Adestrador João Eduardo irá pessoalmente até sua casa para avaliar o ambiente, entender os desafios do seu cão e aplicar treinos práticos de reforço positivo com a sua família.",
-      linkText: "Olá! Fiz o diagnóstico no site e gostaria de agendar atendimento presencial em Cuiabá com o Adestrador João Eduardo!"
-    };
-  } else if (format === 'online') {
-    recommendation = {
-      title: "Consultoria Online com a Adestradora Nicolle",
-      tag: "Consultoria Comportamental ao Vivo",
-      desc: "A Adestradora Nicolle atenderá você por chamada de vídeo para diagnosticar a rotina, alinhar o manejo do seu cão e orientar o passo a passo com suporte contínuo via WhatsApp.",
-      linkText: "Olá! Fiz o diagnóstico no site e gostaria de agendar consultoria online com a Adestradora Nicolle!"
-    };
-  } else if (challenge === 'xixi') {
-    recommendation = {
-      title: "Orientação e Manejo Sanitário: Xixi e Cocô no Lugar Certo",
-      tag: "Rotina e Higiene sem Estresse",
-      desc: "Metodologia comprovada para orientar seu cão a fazer as necessidades no sanitário correto. Disponível presencialmente em Cuiabá com João Eduardo ou online com Nicolle.",
-      linkText: "Olá! Fiz o teste no site e preciso de ajuda com xixi e cocô do meu cão no lugar errado."
+      tag: "Recomendado para quem está em Cuiabá e Várzea Grande",
+      desc: "Como você está na região metropolitana, o acompanhamento presencial diretamente na sua casa e nos locais de passeio permite avaliar o ambiente real e orientar você sobre como conduzir o treinamento no dia a dia.",
+      linkText: `Olá João Eduardo! Fiz o formulário no site. Tenho um cão ${ageText}, nossa maior questão é ${challengeText} e moro em ${locationText}. Gostaria de conversar para entender o caso do meu cão!`
     };
   } else {
     recommendation = {
-      title: "Atendimento Personalizado Seu Pet Equilibrado",
-      tag: "Solução Sob Medida",
-      desc: "Nossa dupla de especialistas, João Eduardo e Nicolle, está pronta para criar o melhor plano de treinamento e devolver a tranquilidade para o seu lar.",
-      linkText: "Olá! Fiz o teste no site e gostaria de saber mais sobre as soluções de adestramento da Seu Pet Equilibrado."
+      title: "Consultoria Comportamental Online com a Adestradora Nicolle",
+      tag: "Orientação Online para Você Aplicar na Rotina da Sua Casa",
+      desc: "Para quem mora em outras cidades, a consultoria online com a Nicolle é o formato ideal para analisar o histórico, entender a rotina da casa e estruturar o plano de manejo que a família aplicará com suporte contínuo.",
+      linkText: `Olá Nicolle! Fiz o formulário no site. Tenho um cão ${ageText}, nossa maior questão é ${challengeText} e moro em ${locationText}. Gostaria de conversar para entender a consultoria online!`
     };
   }
 

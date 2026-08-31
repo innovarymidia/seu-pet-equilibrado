@@ -1347,13 +1347,423 @@ button {
 .faq-answer p {
   font-size: 0.98rem;
   color: var(--text-body);
-  line-height: 1.65;
+/* ==========================================================================
+   SEÇÕES DE POSICIONAMENTO RESPONSÁVEL E CIÊNCIA COMPORTAMENTAL
+   ========================================================================== */
+
+/* Seção 02: Identificação do Problema */
+.problems-section {
+  padding: 92px 0;
+  background: var(--bg-surface);
 }
 
+.problems-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
 
+.problem-card {
+  background: var(--bg-main);
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
 
-/* ==========================================================================
-   RODAPÉ (FOOTER ELEGANTE)
+.problem-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--brand-accent);
+  box-shadow: var(--shadow-sm);
+}
+
+.problem-icon-wrap {
+  font-size: 1.8rem;
+  margin-bottom: 4px;
+}
+
+.problem-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--brand-primary);
+  line-height: 1.35;
+}
+
+.problem-card p {
+  font-size: 0.95rem;
+  color: var(--text-body);
+  line-height: 1.6;
+}
+
+/* Banner de Contexto: Comportamento não acontece no vácuo */
+.context-banner-wrap {
+  margin-top: 48px;
+  background: var(--brand-accent-soft);
+  border: 1.5px solid var(--brand-accent);
+  border-radius: var(--radius-lg);
+  padding: 36px 40px;
+  text-align: center;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.context-banner-wrap h3 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--brand-primary);
+  margin-bottom: 12px;
+}
+
+.context-banner-wrap p {
+  font-size: 1.05rem;
+  color: var(--text-body);
+  line-height: 1.68;
+}
+
+/* Seção 05: O Papel do Tutor */
+.tutor-role-section {
+  padding: 92px 0;
+  background: var(--bg-surface-alt);
+}
+
+.tutor-role-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.tutor-role-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tutor-role-content h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--brand-primary);
+  line-height: 1.25;
+}
+
+.tutor-role-content p {
+  font-size: 1.05rem;
+  color: var(--text-body);
+  line-height: 1.7;
+}
+
+.tutor-guidelines-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.tutor-guidelines-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--brand-primary);
+  line-height: 1.5;
+}
+
+.tutor-guidelines-list li span {
+  color: var(--brand-accent-dark);
+  font-weight: 800;
+  font-size: 1.1rem;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.quote-manifesto-card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  border: 1.5px solid var(--brand-accent);
+  box-shadow: var(--shadow-md);
+  position: relative;
+}
+
+.quote-icon {
+  font-size: 2.8rem;
+  color: var(--brand-accent);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.quote-text {
+  font-size: 1.12rem;
+  font-weight: 600;
+  color: var(--brand-primary);
+  line-height: 1.75;
+  font-style: italic;
+}
+
+.quote-author {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+/* Seção 08: Como Funciona o Acompanhamento (6 etapas) */
+.process-section {
+  padding: 92px 0;
+  background: var(--bg-surface);
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 48px;
+}
+
+.process-card {
+  background: var(--bg-main);
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.process-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--brand-accent);
+}
+
+.process-step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  background: var(--brand-primary);
+  color: #FFFFFF;
+  border-radius: var(--radius-full);
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.process-card h3 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--brand-primary);
+}
+
+.process-card p {
+  font-size: 0.94rem;
+  color: var(--text-body);
+  line-height: 1.6;
+}
+
+/* Seção 09: O que você pode esperar e Para quem é */
+.manifesto-section {
+  padding: 92px 0;
+  background: var(--bg-surface-alt);
+}
+
+.expect-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+  margin-bottom: 56px;
+}
+
+.expect-card {
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.expect-card h4 {
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: var(--brand-primary);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.expect-card p {
+  font-size: 0.94rem;
+  color: var(--text-body);
+  line-height: 1.6;
+}
+
+.fit-duo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.fit-card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  border: 1.5px solid var(--border-light);
+}
+
+.fit-card.fit-yes {
+  border-color: #48BB78;
+}
+
+.fit-card.fit-no {
+  border-color: var(--border-light);
+  background: #FAF7F6;
+}
+
+.fit-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+
+.fit-yes .fit-badge {
+  background: #E6FFFA;
+  color: #234E52;
+  border: 1px solid #B2F5EA;
+}
+
+.fit-no .fit-badge {
+  background: #EDF2F7;
+  color: #4A5568;
+  border: 1px solid #E2E8F0;
+}
+
+.fit-card h3 {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--brand-primary);
+  margin-bottom: 16px;
+}
+
+.fit-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fit-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.96rem;
+  color: var(--text-body);
+  line-height: 1.55;
+}
+
+.fit-yes .fit-list li span {
+  color: #38A169;
+  font-weight: 800;
+}
+
+.fit-no .fit-list li span {
+  color: #E53E3E;
+  font-weight: 800;
+}
+
+.fit-conclusion {
+  margin-top: 18px;
+  font-size: 0.94rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* Seção 12: CTA Final */
+.final-cta-section {
+  padding: 96px 0;
+  background: var(--brand-primary);
+  color: var(--text-light);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.final-cta-container {
+  max-width: 780px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.final-cta-badge {
+  display: inline-block;
+  background: rgba(217, 182, 172, 0.2);
+  border: 1px solid var(--brand-accent);
+  color: var(--brand-accent);
+  padding: 6px 18px;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.final-cta-title {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.2;
+}
+
+.final-cta-desc {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.84);
+  line-height: 1.7;
+}
+
+.btn-final-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--brand-accent);
+  color: var(--brand-primary);
+  padding: 18px 36px;
+  border-radius: var(--radius-full);
+  font-size: 1.1rem;
+  font-weight: 800;
+  transition: all var(--transition-fast);
+  margin-top: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.btn-final-cta:hover {
+  background: #FFFFFF;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
    ========================================================================== */
 .site-footer {
   background: var(--brand-primary);
@@ -1578,6 +1988,32 @@ button {
 
   .pillars-grid {
     grid-template-columns: 1fr;
+  }
+
+  .problems-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tutor-role-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .expect-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fit-duo-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .final-cta-title {
+    font-size: 2rem;
   }
 
   .footer-grid {
