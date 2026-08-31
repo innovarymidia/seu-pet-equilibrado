@@ -252,6 +252,15 @@ button {
   transform: translateY(-1px);
 }
 
+.whatsapp-icon-svg {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  fill: currentColor;
+}
+
 .btn-cta-nav {
   display: inline-flex;
   align-items: center;
@@ -1458,30 +1467,55 @@ button {
   line-height: 1.7;
 }
 
-.tutor-guidelines-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-top: 8px;
+.tutor-grid-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 16px;
 }
 
-.tutor-guidelines-list li {
+.tutor-mini-card {
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  font-size: 0.98rem;
-  font-weight: 600;
-  color: var(--brand-primary);
-  line-height: 1.5;
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
 }
 
-.tutor-guidelines-list li span {
-  color: var(--brand-accent-dark);
-  font-weight: 800;
-  font-size: 1.1rem;
-  line-height: 1;
-  margin-top: 2px;
+.tutor-mini-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--brand-accent);
+}
+
+.tutor-mini-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--brand-accent-soft);
+  color: var(--brand-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.tutor-mini-text strong {
+  display: block;
+  font-size: 0.94rem;
+  color: var(--brand-primary);
+  line-height: 1.35;
+  margin-bottom: 2px;
+}
+
+.tutor-mini-text span {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-body);
+  line-height: 1.45;
 }
 
 .quote-manifesto-card {
@@ -1580,35 +1614,50 @@ button {
   background: var(--bg-surface-alt);
 }
 
-.expect-grid {
+.manifesto-commitment-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin-top: 40px;
-  margin-bottom: 56px;
+  margin-bottom: 48px;
 }
 
-.expect-card {
+.manifesto-commitment-card {
   background: var(--bg-surface);
   border: 1.5px solid var(--border-light);
   border-radius: var(--radius-md);
   padding: 28px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
 }
 
-.expect-card h4 {
-  font-size: 1.12rem;
-  font-weight: 700;
+.manifesto-commitment-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--brand-accent);
+}
+
+.manifesto-commitment-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--brand-accent-soft);
   color: var(--brand-primary);
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  font-size: 1.3rem;
 }
 
-.expect-card p {
-  font-size: 0.94rem;
+.manifesto-commitment-card h3 {
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: var(--brand-primary);
+}
+
+.manifesto-commitment-card p {
+  font-size: 0.95rem;
   color: var(--text-body);
   line-height: 1.6;
 }
@@ -1624,15 +1673,17 @@ button {
   border-radius: var(--radius-lg);
   padding: 36px;
   border: 1.5px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
 }
 
 .fit-card.fit-yes {
   border-color: #48BB78;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F9FFF9 100%);
 }
 
 .fit-card.fit-no {
   border-color: var(--border-light);
-  background: #FAF7F6;
+  background: linear-gradient(180deg, #FFFFFF 0%, #FAF8F7 100%);
 }
 
 .fit-badge {
@@ -1669,13 +1720,13 @@ button {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
 .fit-list li {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
+  gap: 12px;
   font-size: 0.96rem;
   color: var(--text-body);
   line-height: 1.55;
@@ -1684,15 +1735,21 @@ button {
 .fit-yes .fit-list li span {
   color: #38A169;
   font-weight: 800;
+  font-size: 1.1rem;
+  margin-top: 1px;
 }
 
 .fit-no .fit-list li span {
   color: #E53E3E;
   font-weight: 800;
+  font-size: 1.1rem;
+  margin-top: 1px;
 }
 
 .fit-conclusion {
-  margin-top: 18px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--border-light);
   font-size: 0.94rem;
   color: var(--text-muted);
   line-height: 1.6;
@@ -1910,12 +1967,18 @@ button {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
+  .problems-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-}
 
-@media (max-width: 768px) {
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .expect-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .menu-toggle-btn {
     display: flex;
   }
@@ -1925,39 +1988,54 @@ button {
     top: 84px;
     left: 0;
     width: 100%;
-    background: var(--bg-surface);
+    background: #FFFFFF;
     flex-direction: column;
-    padding: 28px 24px;
+    padding: 24px 20px;
     border-bottom: 1px solid var(--border-light);
-    box-shadow: var(--shadow-md);
-    transform: translateY(-120%);
+    box-shadow: 0 16px 36px rgba(53, 21, 21, 0.14);
+    transform: translateY(-130%);
     transition: transform 0.35s ease;
-    gap: 18px;
+    gap: 16px;
+    z-index: 998;
+    max-height: calc(100vh - 84px);
+    overflow-y: auto;
   }
 
   .nav-menu.active {
     transform: translateY(0);
   }
 
-  .btn-treat-nav {
-    display: none;
+  .nav-actions {
+    gap: 10px;
   }
 
+  .btn-cta-nav {
+    padding: 8px 14px;
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
   .hero-title {
-    font-size: 2.3rem;
+    font-size: 2.1rem;
   }
 
   .hero-subtitle {
-    font-size: 1.02rem;
+    font-size: 1rem;
   }
 
   .hero-main-img {
-    height: 340px;
+    height: 320px;
   }
 
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 18px;
   }
 
   .stat-item:nth-child(2) {
@@ -1983,7 +2061,7 @@ button {
   }
 
   .quiz-card {
-    padding: 24px;
+    padding: 24px 18px;
   }
 
   .pillars-grid {
@@ -1999,11 +2077,15 @@ button {
     gap: 32px;
   }
 
+  .tutor-grid-items {
+    grid-template-columns: 1fr;
+  }
+
   .process-grid {
     grid-template-columns: 1fr;
   }
 
-  .expect-grid {
+  .manifesto-commitment-grid {
     grid-template-columns: 1fr;
   }
 
@@ -2013,7 +2095,7 @@ button {
   }
 
   .final-cta-title {
-    font-size: 2rem;
+    font-size: 1.85rem;
   }
 
   .footer-grid {
@@ -2025,10 +2107,5 @@ button {
     flex-direction: column;
     gap: 14px;
     text-align: center;
-  }
-
-  .dog-quick-controls {
-    bottom: 16px;
-    left: 16px;
   }
 }
