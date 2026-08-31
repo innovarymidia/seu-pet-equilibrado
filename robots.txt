@@ -1,0 +1,30 @@
+User-agent: *
+Allow: /
+
+# Motores de Busca e Rastreadores de IA
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+Sitemap: http://localhost:8080/sitemap.xml
+Sitemap: https://seupetequilibrado.com.br/sitemap.xml

@@ -1,0 +1,12 @@
+# Sistema e temporários
+.DS_Store
+Thumbs.db
+*.log
+
+# IDEs e editores
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln

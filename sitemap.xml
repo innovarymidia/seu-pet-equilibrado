@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://seupetequilibrado.com.br/</loc>
+    <lastmod>2026-08-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://seupetequilibrado.com.br/assets/SPE_Logo_semfundo-01-1.png</image:loc>
+      <image:title>Seu Pet Equilibrado: Adestrador em Cuiabá e Mato Grosso</image:title>
+      <image:caption>Logomarca oficial da Seu Pet Equilibrado</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://seupetequilibrado.com.br/assets/5087345224484761182.jpg</image:loc>
+      <image:title>Adestrador João Eduardo em Cuiabá MT</image:title>
+      <image:caption>Adestrador João Eduardo realizando treino presencial com cão em Cuiabá</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://seupetequilibrado.com.br/assets/snapedit_1708088349174-1.jpg</image:loc>
+      <image:title>Adestradora Nicolle: Consultoria Comportamental Online</image:title>
+      <image:caption>Adestradora Nicolle com cão em treinamento positivo</image:caption>
+    </image:image>
+  </url>
+</urlset>
