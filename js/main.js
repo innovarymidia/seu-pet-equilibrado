@@ -230,7 +230,7 @@ function initTestimonials() {
    5. STATS ANIMATED COUNTER
    ==================================================== */
 function initStatsCounter() {
-  const counters = document.querySelectorAll('.stat-number[data-target]');
+  const counters = document.querySelectorAll('.stat-num[data-target], .stat-number[data-target]');
   let started = false;
 
   const observer = new IntersectionObserver((entries) => {
@@ -240,7 +240,7 @@ function initStatsCounter() {
         counters.forEach(counter => {
           const target = +counter.dataset.target;
           let current = 0;
-          const increment = Math.ceil(target / 45);
+          const increment = Math.ceil(target / 45) || 1;
           const timer = setInterval(() => {
             current += increment;
             if (current >= target) {
@@ -253,8 +253,8 @@ function initStatsCounter() {
         });
       }
     });
-  }, { threshold: 0.3 });
+  }, { threshold: 0.2 });
 
-  const statsSection = document.querySelector('.stats-strip');
+  const statsSection = document.querySelector('.indicators-section, .stats-strip, .stats-condensed-grid');
   if (statsSection) observer.observe(statsSection);
 }

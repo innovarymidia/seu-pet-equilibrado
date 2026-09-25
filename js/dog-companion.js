@@ -104,8 +104,8 @@ class PawTrail {
       this.ctx.scale(p.scale, p.scale);
       this.ctx.globalAlpha = p.alpha;
       
-      // Cor rosa terracota oficial da marca (#D9B6AC)
-      this.ctx.fillStyle = '#D9B6AC';
+      // Cor rosa pastel oficial do novo design editorial (#F5BAC9)
+      this.ctx.fillStyle = '#F5BAC9';
 
       // Almofada central da patinha canina
       this.ctx.beginPath();
